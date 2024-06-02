@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="2" total="4" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite" duration-ms="35" started-at="2024-06-03T01:06:15 IST" finished-at="2024-06-03T01:06:15 IST">
+    <groups>
+      <group name="regression">
+        <method signature="MultibranchTest.buidingTheProject()[pri:0, instance:Tests.MultibranchTest@11a7f8f]" name="buidingTheProject" class="Tests.MultibranchTest"/>
+        <method signature="MultibranchTest.measuringPerformance()[pri:0, instance:Tests.MultibranchTest@11a7f8f]" name="measuringPerformance" class="Tests.MultibranchTest"/>
+      </group> <!-- regression -->
+    </groups>
+    <test name="Test" duration-ms="35" started-at="2024-06-03T01:06:15 IST" finished-at="2024-06-03T01:06:15 IST">
+      <class name="Tests.MultibranchTest">
+        <test-method status="PASS" signature="buidingTheProject()[pri:0, instance:Tests.MultibranchTest@11a7f8f]" name="buidingTheProject" duration-ms="10" started-at="2024-06-03T01:06:15 IST" finished-at="2024-06-03T01:06:15 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- buidingTheProject -->
+        <test-method status="PASS" signature="measuringPerformance()[pri:0, instance:Tests.MultibranchTest@11a7f8f]" name="measuringPerformance" duration-ms="0" started-at="2024-06-03T01:06:15 IST" finished-at="2024-06-03T01:06:15 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- measuringPerformance -->
+      </class> <!-- Tests.MultibranchTest -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>
