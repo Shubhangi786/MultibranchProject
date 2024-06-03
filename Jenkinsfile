@@ -25,13 +25,13 @@ pipeline {
         stage('Reporting'){
             steps {
 		echo 'Started reporting process...'
-		publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: '//reports', reportFiles: '/*.html', reportName: 'Extent Report', reportTitles: '', useWrapperFileDirectly: true])
+		publishHTML([allowMissing: true, alwaysLinkToLastBuild: true, includes: '**/*.html', keepAll: true, reportDir: 'C:\\Users\\shubhangimadhukar_sa\\.jenkins\\workspace\\Test_MutibranchBlueOcean_master\\reports', reportFiles: '/*.html', reportName: 'Extent Report', reportTitles: '', useWrapperFileDirectly: true])
             }
         }
-        stage('Notify'){
+        stage('Packaging project'){
             steps{
-		echo 'Sending notification emails...'
-		emailext attachmentsPattern: 'C:\\Users\\shubhangimadhukar_sa\\.jenkins\\workspace\\Test_MutibranchBlueOcean_master\\reports\\/*.html', body: '', subject: 'Jenkins-${JOB_NAME}-${BUILD_NUMBER}', to: 'shubhangimsable@gmail.com'
+		echo 'Packaging project using maven...'
+		bat 'mvn package'
             }
         }
     }
