@@ -16,23 +16,20 @@ pipeline {
     }
 
     stage('Test') {
-      steps {
-        echo 'Running test...'
-        bat 'mvn test'
-      }
-    }
+      parallel {
+        stage('Test') {
+          steps {
+            echo 'Running test...'
+            bat 'mvn test'
+          }
+        }
 
-    stage('Reporting') {
-      steps {
-        echo 'Started reporting process...'
-        publishHTML(allowMissing: true, alwaysLinkToLastBuild: true, includes: '**/*.html', keepAll: true, reportDir: '\\reports', reportFiles: '/*.html', reportName: 'Extent Report', useWrapperFileDirectly: true)
-      }
-    }
+        stage('') {
+          steps {
+            echo 'Printing message parallel to Test stage '
+          }
+        }
 
-    stage('Packaging project') {
-      steps {
-        echo 'Packaging project using maven...'
-        bat 'mvn package'
       }
     }
 
