@@ -2,14 +2,6 @@ pipeline {
     agent any
 
     stages {
-	stage("Cleaning up browser support for reports'){
-		steps{
-		withGroovy {
-    			System.clearProperty("hudson.model.DirectoryBrowserSupport.CSP"); 
-System.setProperty("hudson.model.DirectoryBrowserSupport.CSP", "sandbox allow-scripts; default-src' self'; script-src* 'unsafe-eval'; img-src*; style-src* 'unsafe-inline'; font-src*"); 			
-			}
-		}		
-	}
         stage('Checkout....') {
             steps {
                 echo 'Checkout'
@@ -33,7 +25,7 @@ System.setProperty("hudson.model.DirectoryBrowserSupport.CSP", "sandbox allow-sc
         stage('Reporting'){
             steps {
 		echo 'Started reporting process...'
-		publishHTML([allowMissing: true, alwaysLinkToLastBuild: true, includes: '**/*.html', keepAll: true, reportDir: 'C:\\Users\\shubhangimadhukar_sa\\.jenkins\\workspace\\Test_MutibranchBlueOcean_master\\reports', reportFiles: '/*.html', reportName: 'Extent Report', reportTitles: '', useWrapperFileDirectly: true])
+		publishHTML([allowMissing: true, alwaysLinkToLastBuild: true, includes: '**/*.html', keepAll: true, reportDir: '\\reports', reportFiles: '/*.html', reportName: 'Extent Report', reportTitles: '', useWrapperFileDirectly: true])
             }
         }
         stage('Packaging project'){
