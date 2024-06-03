@@ -24,7 +24,7 @@ pipeline {
           }
         }
 
-        stage('') {
+        stage('Parallel message') {
           steps {
             echo 'Printing message parallel to Test stage '
           }
