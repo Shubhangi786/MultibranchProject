@@ -28,6 +28,11 @@ pipeline {
 		publishHTML([allowMissing: true, alwaysLinkToLastBuild: true, includes: '**/*.html', keepAll: true, reportDir: '\\reports', reportFiles: '/*.html', reportName: 'Extent Report', reportTitles: '', useWrapperFileDirectly: true])
             }
         }
+	stage('Notify') {
+	   steps{
+        	emailext attachmentsPattern: '$WORKSPACE\\reports\\**/*.html', body:  'Please go to ${BUILD_URL} and verify the build', subject: "Jenkins-${JOB_NAME}-${BUILD_NUMBER}", to: 'shubhangimsable@gmail.com'
+    		}
+	}
         stage('Packaging project'){
             steps{
 		echo 'Packaging project using maven...'
