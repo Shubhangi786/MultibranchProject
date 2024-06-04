@@ -22,6 +22,4 @@ public class MultibranchTest {
 	public void acceptanceTestsCheck() {
 		Assert.assertTrue(true);
 	}
-	
-	
 }
